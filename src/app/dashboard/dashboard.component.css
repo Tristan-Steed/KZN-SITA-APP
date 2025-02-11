@@ -1,0 +1,18 @@
+.dashboard-container {
+    padding: 20px;
+  }
+  
+  .dashboard-card {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  mat-chip {
+    padding: 5px;
+    font-size: 14px;
+    color: white;
+  }
