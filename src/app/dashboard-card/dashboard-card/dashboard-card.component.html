@@ -1,0 +1,22 @@
+<mat-card class="dashboard-card" [ngStyle]="{'width': cardWidth}">
+  <!-- Card Header -->
+  <mat-card-header class="card-header">
+    <mat-icon class="header-icon">{{ icon }}</mat-icon>
+    <mat-card-title>{{ title }}</mat-card-title>
+  </mat-card-header>
+
+  <!-- Card Content -->
+  <mat-card-content>
+    <div class="card-item" *ngFor="let item of items">
+      <mat-icon class="item-icon">{{ item.icon }}</mat-icon>
+      <span>{{ item.text }}</span>
+    </div>
+  </mat-card-content>
+
+  <!-- Card Actions -->
+  <mat-card-actions>
+    <button mat-raised-button class="action-button">
+      <mat-icon>{{ buttonIcon }}</mat-icon> {{ buttonText }}
+    </button>
+  </mat-card-actions>
+</mat-card>

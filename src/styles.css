@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+
+}/* Ensure Material Toolbar is Blue */
+mat-toolbar {
+    background-color: #007bff !important; /* Blue */
+    color: white !important;
+  }
+  
+  /* Ensure Buttons Match */
+  .mat-mdc-raised-button {
+    background-color: #007bff !important;
+    color: white !important;
+  }
+  
+  /* Fix Navigation Button Colors */
+  .mat-mdc-button {
+    color: white !important;
+  }
+  
+  /* Fix Card Headers (e-Leave, Payroll, etc.) */
+  mat-card-header {
+    background-color: #007bff !important;
+    color: white !important;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+  }
+  /* Apply the font globally */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  background: url('/assets/dashboard-bg.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
