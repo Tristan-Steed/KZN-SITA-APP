@@ -1,0 +1,55 @@
+<div class="login-container">
+    <mat-card class="login-card">
+      <div class="login-header">
+        <img src="assets/kzn-logo.png" alt="KZN Coat of Arms" class="logo" />
+        <h1>HR Portal Login</h1>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="username" required />
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" required />
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" class="full-width" type="submit" [disabled]="loginForm.invalid">Login</button>
+      </form>
+    </mat-card>
+  </div>
+  
+  <style>
+    .login-container {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /*background: linear-gradient(to bottom, #003366, #006400);*/
+      background-image: "assets/dashboard-bg.png";
+    }
+  
+    .login-card {
+      padding: 32px;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+  
+    .login-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+  
+    .logo {
+      height: 50px;
+      margin-right: 12px;
+    }
+  
+    .full-width {
+      width: 100%;
+    }
+  </style>
