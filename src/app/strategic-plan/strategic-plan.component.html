@@ -1,1 +1,69 @@
-<p>strategic-plan works!</p>
+<div class="container">
+    <h1>Strategic Plan</h1>
+    <hr />
+  
+    <!-- Part A: Our Mandate -->
+    <div class="section">
+      <h2>Part A: Our Mandate</h2>
+  
+      <label><b>Constitutional Mandate:</b></label>
+      <textarea placeholder="Enter constitutional mandate..." [(ngModel)]="mandate.constitutional"></textarea>
+  
+      <label><b>Legislative and Policy Mandates:</b></label>
+      <textarea placeholder="Enter legislative and policy mandates..." [(ngModel)]="mandate.legislative"></textarea>
+  
+      <label><b>Institutional Policies and Strategies:</b></label>
+      <textarea placeholder="Enter institutional policies and strategies..." [(ngModel)]="mandate.policies"></textarea>
+  
+      <label><b>Update to Relevant Court Rulings:</b></label>
+      <textarea placeholder="Enter updates to relevant court rulings..." [(ngModel)]="mandate.courtRulings"></textarea>
+    </div>
+  
+    <!-- Part B: Our Strategic Focus -->
+    <div class="section">
+      <h2>Part B: Our Strategic Focus</h2>
+  
+      <label><b>Vision:</b></label>
+      <textarea placeholder="Enter the organization's vision..." [(ngModel)]="strategicFocus.vision"></textarea>
+  
+      <label><b>Mission:</b></label>
+      <textarea placeholder="Enter the organization's mission..." [(ngModel)]="strategicFocus.mission"></textarea>
+  
+      <label><b>Values:</b></label>
+      <textarea placeholder="Enter the organization's values..." [(ngModel)]="strategicFocus.values"></textarea>
+    </div>
+  
+    <!-- Part C: Measuring Our Performance -->
+    <div class="section">
+      <h2>Part C: Measuring Our Performance</h2>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>OUTCOME</th>
+            <th>OUTCOME INDICATOR</th>
+            <th>BASELINE</th>
+            <th>FIVE YEAR TARGET</th>
+            <th class="action-column">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let outcome of performance; let i = index">
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.indicator" /></td>
+            <td><input type="text" [(ngModel)]="outcome.baseline" /></td>
+            <td><input type="text" [(ngModel)]="outcome.target" /></td>
+            <td class="action-column">
+              <button (click)="removeOutcome(i)">Remove</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button id="greenBtn" (click)="addOutcome()">ADD OUTCOME</button>
+    </div>
+  
+    <!-- Buttons -->
+    <button>Save</button>
+    <button id="greenBtn">Save & Submit for Approval</button>
+  </div>
+  
