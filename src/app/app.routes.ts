@@ -5,6 +5,8 @@ import { StrategicDashboardComponent } from './strategic-dashboard/strategic-das
 import { StrategicPlanComponent } from './strategic-plan/strategic-plan.component';
 import { LoginComponent } from './login/login.component';
 import { ReviewFormComponent } from './review-form/review-form.component';
+import { TopMenuComponent } from './top-menu/top-menu.component';
+import { SideMenuComponent } from './side-menu/side-menu.component';
 
 export const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -12,6 +14,7 @@ export const routes: Routes = [
   { path: 'StrategicDashboard', component: StrategicDashboardComponent },
   { path: 'StrategicPlanComponent', component: StrategicPlanComponent }
   { path: '', component: DashboardComponent, title: 'dashboard' },
-  { path: 'Review', component: ReviewFormComponent, title: 'Review'},{ path: '', component: LoginComponent }
-
+  { path: 'Review', component: ReviewFormComponent, title: 'Review'},
+  { path: 'TopMenu', component: TopMenuComponent, title: 'TopMenu'},
+  { path: 'SideMenu', component: SideMenuComponent, title: 'SideMenu'}
 ];

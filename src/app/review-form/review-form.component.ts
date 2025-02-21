@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Form, FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TopMenuComponent } from "../top-menu/top-menu.component";
+import { SideMenuComponent } from "../side-menu/side-menu.component";
 
 
 
 @Component({
   selector: 'app-review-form',
-  imports: [],
+  imports: [TopMenuComponent, SideMenuComponent],
   templateUrl: './review-form.component.html',
   styleUrl: './review-form.component.css'
 })

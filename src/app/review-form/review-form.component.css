@@ -1,7 +1,7 @@
 .container {
     width: 70%;
     height: 95vh;
-    margin: auto;
+    margin-left: 300px;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
