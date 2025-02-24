@@ -1,1 +1,97 @@
-<p>personal-development-plan works!</p>
+<div class="container">
+    <h1>Personal Development Plan</h1>
+    <hr>
+  
+    <!-- Employee Information -->
+    <div class="section">
+      <h3>Employee Information</h3>
+      <label>Department:</label>
+      <input type="text" [(ngModel)]="employee.department" placeholder="Enter department" />
+  
+      <label>Job Title:</label>
+      <input type="text" [(ngModel)]="employee.jobTitle" placeholder="Enter job title" />
+  
+      <label>Name:</label>
+      <input type="text" [(ngModel)]="employee.name" placeholder="Enter name" />
+    </div>
+  
+     <!-- Development Plan -->
+      <div class="section">
+        <h3>Development Plan</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Area for Development</th>
+              <th>Generic Training</th>
+              <th>Work Related Training</th>
+              <th>Objective</th>
+              <th>Intervention Type</th>
+              <th>Target Quarter</th>
+              <th class="action-column">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let goal of developmentGoals; let i = index">
+              <td><input type="text" [(ngModel)]="goal.area" placeholder="e.g. Computer Skills" /></td>
+              <td><input type="text" [(ngModel)]="goal.training" placeholder="e.g. Research for ..." /></td>
+              <td><input type="text" [(ngModel)]="goal.workRelatedTraining" placeholder="e.g. Research for te" /></td>
+              <td><input type="text" [(ngModel)]="goal.objective" placeholder="e.g. Short course" /></td>
+              <td><input type="text" [(ngModel)]="goal.interventionType" placeholder="e.g. Short course" /></td>
+              <td><input type="text" [(ngModel)]="goal.quarter" placeholder="e.g. Q3" /></td>
+              <td>
+                <button id="greenBtn" (click)="SaveGoal(i)" style="display: none;">Save</button>
+                <button (click)="removeGoal(i)">Remove</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button (click)="addDevelopmentGoal()">Add Development Goal</button>
+      </div>
+
+  
+    <!-- Conferences Attended -->
+    <div class="section">
+      <h3>Conferences Attended</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Conference Name</th>
+            <th>Type of Conference</th>
+            <th class="action-column">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let conference of conferences; let i = index">
+            <td><input type="text" [(ngModel)]="conference.name" placeholder="e.g. Virtual Learn Conference" /></td>
+            <td><input type="text" [(ngModel)]="conference.type" placeholder="e.g. Legal updates" /></td>
+            <td>
+              <button id="greenBtn" (click)="SaveConference(i)" style="display: none;">Save</button>
+              <button (click)="removeConference(i)">Remove</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button (click)="addConference()">Add Conference</button>
+    </div>
+     
+    <!-- Impact Assessment -->
+    <div class="section">
+      <h3>Impact Assessment</h3>
+      <label>Impact on work:</label>
+      <textarea [(ngModel)]="impactAssessment"></textarea>
+  
+      <label>Employee Comments:</label>
+      <textarea [(ngModel)]="employeeComments"></textarea>
+  
+      <label>Supervisor Comments:</label>
+      <textarea [(ngModel)]="supervisorComments"></textarea>
+    </div>
+  
+    <!-- Buttons -->
+     <div class="section">
+      <button (click)="savePlan()">Save Plan</button>
+      <button id="greenBtn" (click)="submitForApproval()">Submit for Approval</button>
+     </div>
+    
+  </div>
+  

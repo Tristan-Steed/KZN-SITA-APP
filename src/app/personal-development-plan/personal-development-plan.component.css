@@ -1,0 +1,124 @@
+.container {
+    width: 70%;
+    height: 95vh;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgb(243, 246, 249);
+    overflow: auto;
+  }
+
+hr{
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  color: #3381d4;
+}
+.container::-webkit-scrollbar {
+    width: 5px; 
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: #3381d4; 
+    border-radius: 10px; 
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+    background: #0056b3; 
+}
+
+.container::-webkit-scrollbar-track {
+    background: white; 
+    border-radius: 10px;
+}
+
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  h1, h3 {
+    color: #0056b3;
+  }
+
+  h1{
+    margin-left: 10px;
+  }
+  
+  input, textarea {
+    width: 99%;
+    height: 35px;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 18px;
+  }
+  
+  button {
+    background-color: #3381d4;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  #greenBtn{
+    margin-left: 10px;
+    background-color: rgb(33, 171, 33) !important;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+  #greenBtn:hover{
+    background-color: green !important;
+  }
+
+  label{
+    font-size: 18px;
+  }
+  
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  
+}
+
+thead {
+  background-color: #f1f1f1;
+}
+
+th {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-weight: bold;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: white;
+  input {
+    width: 95%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+}
+.action-column {
+  width: 10%;  
+  text-align: center;
+}
+.section {
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
+}
