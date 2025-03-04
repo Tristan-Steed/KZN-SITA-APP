@@ -271,5 +271,51 @@ mat-toolbar {
 }
 
 
+.spacer {
+  flex: 1;
+}
 
+.mobile-menu {
+  display: none;
+}
 
+.desktop-nav {
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+  
+  .mobile-menu {
+    display: block;
+  }
+}
+.sidenav-container {
+  height: 100vh; /* Ensure the sidenav container covers the full height */
+}
+.sidenav-container {
+  position: relative;
+  height: 100vh; /* Ensure it takes full height */
+  z-index: 1;
+}
+
+mat-sidenav {
+  z-index: 1000 !important; /* Ensures it appears above everything */
+  background: white; /* Set a background to make it visible */
+}
+
+mat-sidenav-content {
+  position: relative;
+  z-index: 1; /* Keep it below the sidenav */
+}
+
+.mobile-menu {
+  z-index: 1100 !important; /* Ensure the menu button is above everything */
+}
+
+.spacer {
+  flex: 1;
+}

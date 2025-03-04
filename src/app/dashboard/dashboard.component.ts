@@ -8,6 +8,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatChipsModule } from '@angular/material/chips';
 import { DashboardCardComponent } from '../dashboard-card/dashboard-card/dashboard-card.component';
+import {  ViewChild } from '@angular/core';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSidenav } from '@angular/material/sidenav';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,12 +24,27 @@ import { DashboardCardComponent } from '../dashboard-card/dashboard-card/dashboa
     MatGridListModule,
     MatIconModule,
     MatDividerModule,
-    MatChipsModule,DashboardCardComponent
+    MatChipsModule,
+    DashboardCardComponent,MatSidenavModule
   ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent {
+  @ViewChild('sidenav') sidenav!: MatSidenav;
+  isMobile = false;
+
+  constructor(private breakpointObserver: BreakpointObserver) {}
+
+  ngAfterViewInit() {
+    this.breakpointObserver.observe([Breakpoints.Handset]).subscribe((result) => {
+      this.isMobile = result.matches;
+    });
+  }
+
+  toggleSidenav() {
+    this.sidenav.toggle();
+  }
   userName = 'John Doe';
   actions = [
     { label: 'Request Time Off', icon: 'event' },
