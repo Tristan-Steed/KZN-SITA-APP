@@ -1,0 +1,162 @@
+<div>
+<app-top-menu></app-top-menu>
+</div>
+<div class="row">
+    <div class="column">
+       <app-side-menu></app-side-menu>
+    </div>
+
+<div class="container">
+    <h1 class="text-center">SEPTEMBER REVIEW FORM</h1>
+    <p class="text-muted">
+      Purpose: To review, summarize and develop the work performance of all employees.
+    </p>
+    <p>
+        (Following completion of this form, a copy must be forwarded to the Section/People Management.)
+    </p>
+  
+    <form  (ngSubmit)="onSubmit()">
+      <!-- Employee Information -->
+      <div>
+        <h3 style="margin-top: 20px;">Employee Information</h3>
+        <table>
+            <tr>
+                <td class="label"><label for="name">NAME:</label></td>
+                <td><input type="text" id="name" value="Alan Doe"></td>
+                <td class="label"><label for="supervisor">SUPERVISOR/PROJECT LEADER:</label></td>
+                <td><input type="text" id="supervisor" value="Nick Wheeler"></td>
+            </tr>
+            <tr>
+                <td class="label"><label for="job-title">JOB TITLE:</label></td>
+                <td><input type="text" id="job-title" value="Senior IT Lead"></td>
+                <td class="label"><label for="component">COMPONENT:</label></td>
+                <td><input type="text" id="component" value="IT"></td>
+            </tr>
+            <tr>
+                <td class="label"><label for="date-review">DATE OF REVIEW:</label></td>
+                <td><input type="text" id="date-review" value="2023/03/31"></td>
+                <td class="label"><label for="salary">SALARY LEVEL:</label></td>
+                <td><input type="text" id="salary" value="C1"></td>
+            </tr>
+        </table>
+        
+      </div>
+  
+      <!-- Key Result Areas (KRAs) -->
+      <div>
+        <h3 style="margin-top: 20px;">A. KEY RESULT AREAS (KRAs)</h3>
+
+        <p>(Refer to the KRAs included in the performance agreement)</p>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>KRA#</th>
+                    <th>Weighting</th>
+                    <th>Own Assessment (1-5)</th>
+                    <th>Supervisor's Assessment (1-5)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1.</td>
+                    <td><input type="number" class="weighting" min="0" max="100" oninput="updateTotal()"></td>
+                    <td><input type="number" min="1" max="5"></td>
+                    <td><input type="number" min="1" max="5"></td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td><input type="number" class="weighting" min="0" max="100" oninput="updateTotal()"></td>
+                    <td><input type="number" min="1" max="5"></td>
+                    <td><input type="number" min="1" max="5"></td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td><input type="number" class="weighting" min="0" max="100" oninput="updateTotal()"></td>
+                    <td><input type="number" min="1" max="5"></td>
+                    <td><input type="number" min="1" max="5"></td>
+                </tr>
+                <tr>
+                    <td>4.</td>
+                    <td><input type="number" class="weighting" min="0" max="100" oninput="updateTotal()"></td>
+                    <td><input type="number" min="1" max="5"></td>
+                    <td><input type="number" min="1" max="5"></td>
+                </tr>
+                <tr>
+                    <td>5.</td>
+                    <td><input type="number" class="weighting" min="0" max="100" oninput="updateTotal()"></td>
+                    <td><input type="number" min="1" max="5"></td>
+                    <td><input type="number" min="1" max="5"></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr class="total-row">
+                    <td>Total</td>
+                    <td><input type="text" id="totalWeighting" readonly></td>
+                    <td colspan="2">100%</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+  
+      <!-- Generic Assessment Factors (GAFs) -->
+      <div>
+        <h3 style="margin-top: 20px;">B. GENERIC ASSESSMENT FACTORS (GAFs)</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>GAF#</th>
+                    <th>Weighting</th>
+                    <th>Own Rating (1-5)</th>
+                    <th>Supervisor's Rating (1-5)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1.</td>
+                    <td><input type="number" class="weighting" min="0" max="100" oninput="updateTotal()"></td>
+                    <td><input type="number" min="1" max="5"></td>
+                    <td><input type="number" min="1" max="5"></td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td><input type="number" class="weighting" min="0" max="100" oninput="updateTotal()"></td>
+                    <td><input type="number" min="1" max="5"></td>
+                    <td><input type="number" min="1" max="5"></td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td><input type="number" class="weighting" min="0" max="100" oninput="updateTotal()"></td>
+                    <td><input type="number" min="1" max="5"></td>
+                    <td><input type="number" min="1" max="5"></td>
+                </tr>
+                <tr>
+                    <td>4.</td>
+                    <td><input type="number" class="weighting" min="0" max="100" oninput="updateTotal()"></td>
+                    <td><input type="number" min="1" max="5"></td>
+                    <td><input type="number" min="1" max="5"></td>
+                </tr>
+                <tr>
+                    <td>5.</td>
+                    <td><input type="number" class="weighting" min="0" max="100" oninput="updateTotal()"></td>
+                    <td><input type="number" min="1" max="5"></td>
+                    <td><input type="number" min="1" max="5"></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr class="total-row">
+                    <td>Total</td>
+                    <td><input type="text" id="totalWeighting" readonly></td>
+                    <td colspan="2">100%</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+  
+      <!-- Submit Buttons -->
+      <div class="text-center mt-3">
+        <button type="submit" class="btn btn-primary">Save Review</button>
+        <button type="button" class="greenBtn">Submit for Approval</button>
+      </div>
+    </form>
+  </div>
+  
