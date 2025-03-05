@@ -2,9 +2,14 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <mat-toolbar color="primary">
+  <button mat-icon-button (click)="toggleSidenav()" class="mobile-menu">
+    <mat-icon style="color: aliceblue;">menu</mat-icon>
+  </button>
   <span>HR PORTAL</span>
   <span class="spacer"></span>
-  <nav>
+  
+  <!-- Desktop Navigation -->
+  <nav class="desktop-nav" *ngIf="!isMobile">
     <button mat-button>
       <mat-icon>dashboard</mat-icon> Dashboard
     </button>
@@ -25,6 +30,34 @@
     </button>
   </nav>
 </mat-toolbar>
+
+<!-- Mobile Sidenav -->
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="over">test
+    <button mat-button (click)="sidenav.close()">
+      <mat-icon>close</mat-icon> Close
+    </button>
+    <button mat-button>
+      <mat-icon>dashboard</mat-icon> Dashboard
+    </button>
+    <button mat-button>
+      <mat-icon>person</mat-icon> My Profile
+    </button>
+    <button mat-button>
+      <mat-icon>card_giftcard</mat-icon> Benefits
+    </button>
+    <button mat-button>
+      <mat-icon>bar_chart</mat-icon> Performance
+    </button>
+    <button mat-button>
+      <mat-icon>school</mat-icon> Learning
+    </button>
+    <button mat-button>
+      <mat-icon>library_books</mat-icon> Directory
+    </button>
+  </mat-sidenav>
+
+</mat-sidenav-container>
   <!-- Hero Section -->
   <div class="hero-section">
     <h2>👋 Welcome, {{ userName }}</h2><br />
