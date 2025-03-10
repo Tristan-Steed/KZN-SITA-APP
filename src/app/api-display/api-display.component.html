@@ -1,0 +1,27 @@
+<p>api-display works!</p>
+
+<button (click)="getUser()">Get Users</button>
+
+<table>
+    <thead>
+        <tr>
+        <th>name</th>
+        <th>surname</th>
+        <th>email</th>
+        <th>Picture</th>
+        </tr>
+        
+    </thead>
+    <tbody>
+        <tr *ngFor = "let user of users">
+            <td>{{ user.first_name }}</td>
+            <td>{{ user.last_name }}</td>
+            <td>{{ user.email }}</td>
+            <td><img [src]="user.avatar" alt="User Avatar" width="50">
+            </td>
+        
+    </tbody>
+</table>
+
+
+

@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -39,5 +37,24 @@ export class AuthService {
   getUserRole(): string | null {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     return user.role || null;
+  }
+
+
+  async getUsers() {
+    try{
+      const response = await fetch("https://reqres.in/api/users?page=2");
+      if(!response.ok) throw new Error("Network error");
+
+      const UserDetails = await response.json();
+
+      console.log(UserDetails);
+
+     return UserDetails;
+
+    }catch(error) {
+      console.error("Error fetching data: ", error);
+      return [];
+    }
+    
   }
 }

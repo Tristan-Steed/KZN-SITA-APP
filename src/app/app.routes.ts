@@ -6,7 +6,7 @@ import { ReviewFormComponent } from './review-form/review-form.component';
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { LoginComponent } from './login/login.component';
-//import { AuthGuard } from './guards/auth.guard';
+import { ApiDisplayComponent } from './api-display/api-display.component';
 
 export const routes: Routes = [
   { path: 'DashboardComponent', component: DashboardComponent, title: 'dashboard',  },   //canActivate: [AuthGuard]
@@ -15,7 +15,8 @@ export const routes: Routes = [
   { path: 'TopMenu', component: TopMenuComponent, title: 'TopMenu'},
   { path: 'SideMenu', component: SideMenuComponent, title: 'SideMenu'},
   { path: 'PersonalDevelopmentPlan', component: PersonalDevelopmentPlanComponent },
-  { path: 'StrategicPlanComponent', component: StrategicPlanComponent }
+  { path: 'StrategicPlanComponent', component: StrategicPlanComponent },
+  { path: 'ApiDisplayComponent', component: ApiDisplayComponent, title: 'ApiDisplay' }
   
 ];
 
