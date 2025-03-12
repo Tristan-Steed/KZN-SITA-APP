@@ -1,1 +1,48 @@
-<p>epmd-level-1-12 works!</p>
+<div class="container">
+    <h1>Employee Performance Management</h1>
+    
+    <button (click)="addRow()">Add Row</button>
+  
+    <table>
+      <thead>
+        <tr>
+          <th rowspan="2">KEY ACTIVITIES</th>
+          <th colspan="5">PERFORMANCE STANDARDS</th>
+          <th colspan="2">RESOURCE REQUIREMENTS</th>
+        </tr>
+        <tr>
+          <th>Indicators</th>
+          <th colspan="4">Time (completed by)</th>
+          <th>Human resources</th>
+          <th>Financial resources</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>Q1</th>
+          <th>Q2</th>
+          <th>Q3</th>
+          <th>Q4</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of rows; let i = index">
+          <td><input [(ngModel)]="row.keyActivity" type="text"></td>
+          <td><input [(ngModel)]="row.indicators" type="text"></td>
+          <td><input [(ngModel)]="row.q1" type="text"></td>
+          <td><input [(ngModel)]="row.q2" type="text"></td>
+          <td><input [(ngModel)]="row.q3" type="text"></td>
+          <td><input [(ngModel)]="row.q4" type="text"></td>
+          <td><input [(ngModel)]="row.humanResources" type="text"></td>
+          <td><input [(ngModel)]="row.financialResources" type="text"></td>
+          <td class="action-column">
+            <button (click)="saveRow(i)">Save</button>
+            <button (click)="removeRow(i)" class="delete-btn">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
