@@ -7,6 +7,8 @@ import { TopMenuComponent } from './top-menu/top-menu.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { LoginComponent } from './login/login.component';
 import { ApiDisplayComponent } from './api-display/api-display.component';
+import { EpmdLevel112Component } from './epmd-level-1-12/epmd-level-1-12.component';
+import { EpmdSmsLevel112Component } from './epmd-sms-13-16/epmd-sms-13-16.component';
 
 export const routes: Routes = [
   { path: 'DashboardComponent', component: DashboardComponent, title: 'dashboard',  },   //canActivate: [AuthGuard]
@@ -16,7 +18,9 @@ export const routes: Routes = [
   { path: 'SideMenu', component: SideMenuComponent, title: 'SideMenu'},
   { path: 'PersonalDevelopmentPlan', component: PersonalDevelopmentPlanComponent },
   { path: 'StrategicPlanComponent', component: StrategicPlanComponent },
-  { path: 'ApiDisplayComponent', component: ApiDisplayComponent, title: 'ApiDisplay' }
+  { path: 'ApiDisplayComponent', component: ApiDisplayComponent, title: 'ApiDisplay' },
+  { path: 'EpmdSmsLevel112Component', component: EpmdSmsLevel112Component },
+  { path: 'EpmdLevel112Component', component: EpmdLevel112Component, title: 'ApiDisplay' }
   
 ];
 

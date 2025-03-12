@@ -1,29 +1,37 @@
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  
   private users: any[] = [
     { username: 'user1', password: 'password1' },
     { username: 'user2', password: 'password2' },
     { username: 'user3', password: 'password3' },
-  ];
+  ]; 
   
   constructor() {}
 
+  apiURL = 'http://localhost:3000/users';
+
+
   login(username: string, password: string): Observable<any> {
-    const user = this.users.find(u => u.username === username && u.password === password);
-    if (user) {
-      localStorage.setItem('user', JSON.stringify(user)); // Store user in localStorage
-      return new Observable(observer => {
-        observer.next(user);
-        observer.complete();
-      });
-    } else {
-      return throwError(() => new Error('Invalid username or password'));
-    }
+
+      const user = this.users.find((u: { username: string; password: string; }) => u.username === username && u.password === password);
+      if (user) {
+        localStorage.setItem('user', JSON.stringify(user)); // Store user in localStorage
+        return new Observable(observer => {
+          observer.next(user);
+          observer.complete();
+        });
+      } else {
+        return throwError(() => new Error('Invalid username or password'));
+      }
+    
+  
   }
 
   logout() {
