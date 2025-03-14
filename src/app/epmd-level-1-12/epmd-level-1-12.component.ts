@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
   imports: [CommonModule, FormsModule]
 })
 export class EpmdLevel112Component {
+
+
   rows: any[] = [];
 
   // Add a new row to the table

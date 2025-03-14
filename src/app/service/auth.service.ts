@@ -15,8 +15,18 @@ export class AuthService {
   
   constructor() {}
 
-  apiURL = 'http://localhost:3000/users';
+  apiURL = 'http://localhost:3000/First_EMPs';
 
+  async OnInit(){
+    try{
+      const response = await fetch(this.apiURL);
+      const data = response.json();
+      
+      console.log(data);
+    }catch (error){
+      console.log("Error fetching data: ", error)
+    }
+  }
 
   login(username: string, password: string): Observable<any> {
 
@@ -28,6 +38,7 @@ export class AuthService {
           observer.complete();
         });
       } else {
+        this.OnInit()
         return throwError(() => new Error('Invalid username or password'));
       }
     
