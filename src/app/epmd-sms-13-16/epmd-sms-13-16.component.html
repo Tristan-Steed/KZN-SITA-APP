@@ -1,0 +1,51 @@
+<div class="container">
+    <h2>Directorate Performance Management</h2>
+    <h3>KEY RESULT AREA 1: Policy development and research</h3>
+    
+    <p class="strategic-objective">
+      <strong>Strategic objective:</strong> To develop at a national level policies, systems, and guidelines 
+      pertaining to employee performance management for employees on salary levels 1 to 12 and to facilitate 
+      and ensure implementation in national and provincial departments in the Public Service through research, 
+      interventions, assistance and advice, and monitoring and evaluation.
+    </p>
+  
+    <table>
+      <thead>
+        <tr>
+          <th rowspan="2">Measurable Objective</th>
+          <th rowspan="2">Outputs</th>
+          <th rowspan="2">Indicator</th>
+          <th colspan="4">Activities per Quarter</th>
+          <th colspan="2">Resource Requirements</th>
+        </tr>
+        <tr>
+          <th>Qtr 1</th>
+          <th>Qtr 2</th>
+          <th>Qtr 3</th>
+          <th>Qtr 4</th>
+          <th>Budget</th>
+          <th>HR Resources</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of rows; let i = index">
+          <td><input [(ngModel)]="row.objective" type="text"></td>
+          <td><input [(ngModel)]="row.outputs" type="text"></td>
+          <td><input [(ngModel)]="row.indicator" type="text"></td>
+          <td><input [(ngModel)]="row.q1" type="text"></td>
+          <td><input [(ngModel)]="row.q2" type="text"></td>
+          <td><input [(ngModel)]="row.q3" type="text"></td>
+          <td><input [(ngModel)]="row.q4" type="text"></td>
+          <td><input [(ngModel)]="row.budget" type="text"></td>
+          <td><input [(ngModel)]="row.hrResources" type="text"></td>
+          <td class="action-column">
+            <button (click)="saveRow(i)">Save</button>
+            <button (click)="removeRow(i)" class="delete-btn">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <button class="add-btn" (click)="addRow()">Add Row</button>
+  </div>
+  

@@ -1,0 +1,21 @@
+table{
+    background-color:aliceblue;
+    color: black;
+}
+th{
+    width: 200px;
+    height: 40px;
+    background-color: aliceblue;
+    color: black;
+    text-align: start;
+}
+
+td{
+    width: 200px;
+    height: 40px;
+}
+
+img{
+    width: 40px;
+    height: 40px;
+}
