@@ -1,11 +1,17 @@
 .container {
-    width: 100%;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: rgb(243, 246, 249);
+  overflow: auto;
+}
   
   h2, h3 {
     text-align: left;
+    color: #0056b3;
   }
   
   .strategic-objective {
@@ -20,7 +26,7 @@
   }
   
   th, td {
-    border: 1px solid black;
+    border: 1px solid #ccc;
     padding: 10px;
     text-align: left;
   }
@@ -30,13 +36,15 @@
   }
   
   input {
-    width: 100%;
-    border: none;
+    width: 95%;
+    border: 1px solid #ccc;
     padding: 5px;
   }
   
   .action-column {
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
   }
   
   .add-btn, .delete-btn {
@@ -44,7 +52,7 @@
     padding: 8px 12px;
     cursor: pointer;
     border: none;
-    background-color: #007bff;
+    background-color: rgb(9, 151, 9);
     color: white;
     border-radius: 4px;
   }

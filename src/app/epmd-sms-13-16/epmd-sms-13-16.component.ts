@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
 interface RowData {
+  id: number;
   objective: string;
   outputs: string;
   indicators: string;
@@ -12,7 +13,7 @@ interface RowData {
   q3: string;
   q4: string;
   budget: string;
-  hrResources: string;
+  hr: string;
 }
 
 @Component({
@@ -23,7 +24,7 @@ interface RowData {
 })
 
 
-export class EpmdSmsLevel112Component implements OnInit{
+export class EpmdSmsLevel1316Component implements OnInit{
 
   constructor (private http: HttpClient) {}
 
@@ -47,20 +48,103 @@ export class EpmdSmsLevel112Component implements OnInit{
   
 
   addRow() {
-    this.rows.push({ objective: '', outputs: '', indicators: '', q1: '', q2: '', q3: '', q4: '', budget: '', hrResources: '' });
+    this.rows.push({id: 0, objective: '', outputs: '', indicators: '', q1: '', q2: '', q3: '', q4: '', budget: '', hr: '' });
   }
+  handleRow(index: number){
+    const rowData = this.rows[index];
+
+    if(rowData.id){
+      this.updateRow(index);
+    }else{
+      this.saveRow(index);
+    }
+  }
+  saveRow(index: number) {
+    const rowData = { ...this.rows[index] }; // Copy the data to avoid modifying the original object
+
+    // Ensure all required fields exist and set defaults for optional fields
+    const postData = {
+        objective: rowData.objective || '',
+        outputs: rowData.outputs || '',
+        indicators: rowData.indicators || '',
+        q1: rowData.q1 ?? null,
+        q2: rowData.q2 ?? null,
+        q3: rowData.q3 ?? null,
+        q4: rowData.q4 ?? null,
+        budget: rowData.budget || '',
+        hr: rowData.hr || ''
+    };
+
+    this.http.post('http://localhost:3000/First_DPMs', postData).subscribe({
+        next: (response) => {
+            console.log('Row saved:', response);
+            alert('Row successfully saved!');
+        },
+        error: (error) => {
+            console.error('Error saving row:', error);
+            alert('Failed to save row. Please try again.');
+        },
+        complete: () => console.log('Request completed!')
+    });
+  }
+  updateRow(index: number) {
+  const rowData = { ...this.rows[index] }; 
+
+  if (!rowData.id) {
+      alert("Cannot update row without an ID.");
+      return;
+  }
+
+  const updateData = {
+      objective: rowData.objective || '',
+      outputs: rowData.outputs || '',
+      indicators: rowData.indicators || '',
+      q1: rowData.q1 ?? null,
+      q2: rowData.q2 ?? null,
+      q3: rowData.q3 ?? null,
+      q4: rowData.q4 ?? null,
+      budget: rowData.budget || '',
+      hr: rowData.hr || ''
+  };
+
+  this.http.put(`http://localhost:3000/First_DPMs/${rowData.id}`, updateData).subscribe({
+      next: (response) => {
+          console.log('Row updated:', response);
+          alert('Row updated successfully!');
+      },
+      error: (error) => {
+          console.error('Error updating row:', error);
+          alert('Failed to update row. Please try again.');
+      },
+      complete: () => console.log('Update request completed!')
+  });
+  }
+
 
   removeRow(index: number) {
-    this.rows.splice(index, 1);
+  const rowData = this.rows[index];
+
+  if (!rowData.id) {
+      alert("Cannot delete row without an ID.");
+      return;
   }
 
-  saveRow(index: number) {
-    const rowData = this.rows[index]; // Replace with actual data object
-  
-    this.http.post('http://localhost:3000/First_DPMs', rowData).subscribe({
-      next: (response) => console.log('Row saved:', response),
-      error: (error) => console.error('Error saving row:', error),
-      complete: () => console.log('Request completed!')
-    });
-}
+  if (!confirm(`Are you sure you want to delete this record?`)) {
+      return; // Exit if the user cancels the action
+  }
+
+  this.http.delete(`http://localhost:3000/First_DPMs/${rowData.id}`).subscribe({
+      next: (response) => {
+          console.log('Row deleted:', response);
+          alert('Row deleted successfully!');
+          this.rows.splice(index, 1); // Remove the row from the UI after successful deletion
+      },
+      error: (error) => {
+          console.error('Error deleting row:', error);
+          alert('Failed to delete row. Please try again.');
+      },
+      complete: () => console.log('Delete request completed!')
+  });
+  }
+
 }

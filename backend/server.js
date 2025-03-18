@@ -76,16 +76,16 @@ app.get('/First_DPMs', (req, res) => {
 //-----------------------------------------------------
 //POST--------------------------
 app.post('/First_DPMs', (req, res) => {
-    const { objective, outputs, indicators, q1, q2, q3, q4, budget, hrResources } = req.body;
+    const { objective, outputs, indicators, q1, q2, q3, q4, budget, hr } = req.body;
 
-    if (!objective || !outputs || !indicators || !budget || !hrResources) {
-        return res.status(400).json({ error: "All fields are required except Q's" });
+    if (!objective || !outputs || !indicators || !budget || !hr) {
+        return res.status(400).json({ error: "All required fields must be filled except Qs" });
     }
 
-    const sql = `INSERT INTO First_DPMs (objective, outputs, indicators, q1, q2, q3, q4, budget, hrResources) 
+    const sql = `INSERT INTO First_DPMs (objective, outputs, indicators, q1, q2, q3, q4, budget, hr) 
                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
-    const params = [objective, outputs, indicators, q1, q2, q3, q4, budget, hrResources];
+    const params = [objective, outputs, indicators, q1 || null, q2 || null, q3 || null, q4 || null, budget, hr];
 
     db.run(sql, params, function (err) {
         if (err) {
@@ -93,11 +93,59 @@ app.post('/First_DPMs', (req, res) => {
         }
 
         res.status(201).json({
-            message: "Record added...",
+            message: "Record added successfully",
             id: this.lastID 
         });
     });
 });
+//PUT------------------------------------------------------
+app.put('/First_DPMs/:id', (req, res) => {
+    const { id } = req.params;
+    const { objective, outputs, indicators, q1, q2, q3, q4, budget, hr } = req.body;
+
+    if (!id) {
+        return res.status(400).json({ error: "ID is required for updating a record" });
+    }
+
+    const sql = `UPDATE First_DPMs 
+                 SET objective = ?, outputs = ?, indicators = ?, q1 = ?, q2 = ?, q3 = ?, q4 = ?, budget = ?, hr = ? 
+                 WHERE id = ?`;
+
+    const params = [objective, outputs, indicators, q1 ?? null, q2 ?? null, q3 ?? null, q4 ?? null, budget, hr, id];
+
+    db.run(sql, params, function (err) {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+
+        res.json({ message: "Record updated successfully", changes: this.changes });
+    });
+});
+//DELETE-------------------------------------
+app.delete('/First_DPMs/:id', (req, res) => {
+    const { id } = req.params;
+
+    if (!id) {
+        return res.status(400).json({ error: "ID is required to delete a record" });
+    }
+
+    const sql = `DELETE FROM First_DPMs WHERE id = ?`;
+
+    db.run(sql, [id], function (err) {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+
+        if (this.changes === 0) {
+            return res.status(404).json({ error: "Record not found" });
+        }
+
+        res.json({ message: "Record deleted successfully", deletedId: id });
+    });
+});
+
+
+
 
 
 

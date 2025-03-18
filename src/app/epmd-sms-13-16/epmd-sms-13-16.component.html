@@ -37,9 +37,9 @@
           <td><input [(ngModel)]="row.q3" type="text"></td>
           <td><input [(ngModel)]="row.q4" type="text"></td>
           <td><input [(ngModel)]="row.budget" type="text"></td>
-          <td><input [(ngModel)]="row.hrResources" type="text"></td>
+          <td><input [(ngModel)]="row.hr" type="text"></td>
           <td class="action-column">
-            <button (click)="saveRow(i)">Save</button>
+            <button (click)="handleRow(i)" class="add-btn">Save</button>
             <button (click)="removeRow(i)" class="delete-btn">Remove</button>
           </td>
         </tr>
