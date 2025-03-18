@@ -1,0 +1,268 @@
+<div class="container">
+    <h1>Part 2 - Performance Assessment</h1>
+    <hr />
+  
+    <!-- Part A: Our Mandate -->
+    <div class="section">
+      <h2>Standard Rating SChedule for KRAs and GAFs</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Rating</th>
+            <th>Category</th>
+            <th>Percentage (%)</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>UNACCEPTABLE PERFORMANCE</td>
+            <td>69% and below</td>
+            <td>Performance does not meet the standard expected for the job. 
+              The rewiew/assessment indicates that the jobholder has achieved less than fully effective results against all of the 
+            performance criteria and indicators as specified in the Performance Agreement and Workplan.</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>PERFORMANCE NOT FULLY EFFECTIVE/td>
+            <td>70% - 99%</td>
+            <td>Performance does not meet the standard expected for the job. 
+              The rewiew/assessment indicates that the jobholder has achieved less than fully effective results against all of the 
+            performance criteria and indicators as specified in the Performance Agreement and Workplan.</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>FULLY EFFECTIVE (and slightly above expectations)</td>
+            <td>100% - 114%</td>
+            <td>Performance does not meet the standard expected for the job. 
+              The rewiew/assessment indicates that the jobholder has achieved less than fully effective results against all of the 
+            performance criteria and indicators as specified in the Performance Agreement and Workplan.</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>PERFORMANCE SIGNIFICANTLY ABOVE EXPECTATIONS</td>
+            <td>115% - 129%</td>
+            <td>Performance does not meet the standard expected for the job. 
+              The rewiew/assessment indicates that the jobholder has achieved less than fully effective results against all of the 
+            performance criteria and indicators as specified in the Performance Agreement and Workplan.</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>OUTSTANDING PERFORMANCE</td>
+            <td>150% - 167%</td>
+            <td>Performance does not meet the standard expected for the job. 
+              The rewiew/assessment indicates that the jobholder has achieved less than fully effective results against all of the 
+            performance criteria and indicators as specified in the Performance Agreement and Workplan.</td>
+          </tr>
+  
+        </tbody>
+      </table>
+      
+    </div>
+  
+    <!-- Part B: Our Strategic Focus -->
+    <div class="section">
+      <h2>Rating of KRAs by Supervisor and Employee:</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>KEY RESULT AREAS</th>
+            <th>Weight (%)</th>
+            <th>Own rating (1-5)</th>
+            <th>Supervisor Rating (1-5)</th>
+            <th>IRC Rating (1-5)</th>
+            <th>Mod. Com. Rating (1-5)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let outcome of performance; let i = index">
+            <td>1.<input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+          </tr>
+          <tr *ngFor="let outcome of performance; let i = index">
+            <td>2.<input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+          </tr>
+          <tr *ngFor="let outcome of performance; let i = index">
+            <td>3.<input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+          </tr>
+          <tr *ngFor="let outcome of performance; let i = index">
+            <td>4.<input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+          </tr>
+          <tr *ngFor="let outcome of performance; let i = index">
+            <td>5.<input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+          </tr>
+          <tr *ngFor="let outcome of performance; let i = index">
+            <td><strong>Total</strong> (NOTE: Weightting of KRAs must total 100%)</td>
+            <td>100%</td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+          </tr>
+          <tr *ngFor="let outcome of performance; let i = index">
+            <td><strong>Score according to calculator</strong>: Employees on level 1-12:</td>
+            <td>80%</td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Rating of GAFs by Supervisor and Employee:</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>GENERIC ASSESSMENT FACTORS - GAF(s)</th>
+            <th>Weight (%)</th>
+            <th>Own rating (1-5)</th>
+            <th>Supervisor Rating (1-5)</th>
+            <th>IRC Rating (1-5)</th>
+            <th>Mod. Com. Rating (1-5)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let outcome of performance; let i = index">
+            <td>1.<input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+          </tr>
+          <tr *ngFor="let outcome of performance; let i = index">
+            <td>2.<input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+          </tr>
+          <tr *ngFor="let outcome of performance; let i = index">
+            <td>3.<input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+          </tr>
+          <tr *ngFor="let outcome of performance; let i = index">
+            <td>4.<input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+          </tr>
+          <tr *ngFor="let outcome of performance; let i = index">
+            <td>5.<input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+          </tr>
+          <tr *ngFor="let outcome of performance; let i = index">
+            <td><strong>Total</strong> (NOTE: Weightting of GAFs must total 100%)</td>
+            <td>100%</td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+          </tr>
+          <tr *ngFor="let outcome of performance; let i = index">
+            <td><strong>Score according to calculator</strong>: Employees on level 1-12:</td>
+            <td>20%</td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>FINAL SCORE</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>GRAND TOTAL</th>
+            <th>OWN RATING</th>
+            <th>SUPERVISOR'S RATING</th>
+            <th>MODERATING COM'S RATING</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let outcome of performance; let i = index">
+            <td>KRA + GAF (80% + 20%) for levels 1-12</td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Part C: Measuring Our Performance -->
+    <!-- <div class="section">
+      <h2>Part C: Measuring Our Performance</h2>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>OUTCOME</th>
+            <th>OUTCOME INDICATOR</th>
+            <th>BASELINE</th>
+            <th>FIVE YEAR TARGET</th>
+            <th class="action-column">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let outcome of performance; let i = index">
+            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
+            <td><input type="text" [(ngModel)]="outcome.indicator" /></td>
+            <td><input type="text" [(ngModel)]="outcome.baseline" /></td>
+            <td><input type="text" [(ngModel)]="outcome.target" /></td>
+            <td class="action-column">
+              <button (click)="removeOutcome(i)">Remove</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button id="greenBtn" (click)="addOutcome()">ADD OUTCOME</button>
+    </div> -->
+  
+    <!-- Buttons -->
+    <button>Save</button>
+    <button id="greenBtn">Save & Submit for Approval</button>
+  </div>
+  
