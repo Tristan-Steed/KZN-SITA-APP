@@ -1,6 +1,12 @@
+.main{
+  display: flex;
+}
+
+
 /* Container Styling */
 .container {
-  width: 80%;
+  width: 75%;
+  height: 85vh;
   margin: auto;
   padding: 20px;
   border: 1px solid #ddd;
@@ -30,7 +36,8 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 15px;
-  background: white;
+  background: #f3f6f9;
+  margin-bottom: 10px;
 }
 
 th, td {
@@ -42,13 +49,17 @@ th, td {
 
 /* Header Styling */
 th {
-  background-color: #e0e0e0;
-  color: #333;
+  background-color: #1c5ba3;
+  
+  color: white;
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;
 }
 
+tr{
+  background-color: #f3f6f9;
+}
 /* Row Hover Effect */
 tr:hover {
   background-color: #f9f9f9;
@@ -57,6 +68,7 @@ tr:hover {
 /* Input & Textarea Styling */
 textarea {
   width: 100%;
+  min-height: 100px;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -68,7 +80,7 @@ textarea {
 
 /* Quarter Inputs */
 .non-qtr {
-  width: 150px;
+  width: 160px;
   height: 40px;
 }
 
@@ -121,5 +133,6 @@ textarea {
 }
 
 .new-row:hover {
+  margin-top: 10px;
   background-color: #004494;
 }

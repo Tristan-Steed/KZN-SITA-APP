@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import {MatDialog}  from '@angular/material/dialog'
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
+import { TopMenuComponent } from '../top-menu/top-menu.component';
+import { SideMenuComponent } from "../side-menu/side-menu.component";
+
 
 interface RowData {
   id: number;
@@ -22,7 +25,7 @@ interface RowData {
   selector: 'app-epmd-sms-13-16',
   templateUrl: './epmd-sms-13-16.component.html',
   styleUrl: './epmd-sms-13-16.component.css',
-  imports: [CommonModule, FormsModule, ]
+  imports: [CommonModule, FormsModule, TopMenuComponent, SideMenuComponent]
 })
 
 

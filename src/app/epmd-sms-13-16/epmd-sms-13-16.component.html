@@ -1,52 +1,57 @@
-<div class="container">
-    <h1>Directorate Performance Management</h1>
-    <h2>KEY RESULT AREA 1: Policy development and research</h2>
-    
-    <p class="strategic-objective">
-      <strong>Strategic objective:</strong> To develop at a national level policies, systems, and guidelines 
-      pertaining to employee performance management for employees on salary levels 1 to 12 and to facilitate 
-      and ensure implementation in national and provincial departments in the Public Service through research, 
-      interventions, assistance and advice, and monitoring and evaluation.
-    </p>
-  
-    <table>
-      <thead>
-        <tr>
-          <th rowspan="2">Measurable Objective</th>
-          <th rowspan="2">Outputs</th>
-          <th rowspan="2">Indicator</th>
-          <th colspan="4">Activities per Quarter</th>
-          <th colspan="2">Resource Requirements</th>
-        </tr>
-        <tr>
-          <th>Qtr 1</th>
-          <th>Qtr 2</th>
-          <th>Qtr 3</th>
-          <th>Qtr 4</th>
-          <th>Budget</th>
-          <th>HR Resources</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let row of rows; let i = index">
-          <td><textarea [(ngModel)]="row.objective" class="non-qtr"></textarea></td>
-          <td><textarea [(ngModel)]="row.outputs" class="non-qtr"></textarea></td>
-          <td><textarea [(ngModel)]="row.indicators" class="non-qtr"></textarea></td>
-          <td><textarea [(ngModel)]="row.q1" class="qtr"></textarea></td>
-          <td><textarea [(ngModel)]="row.q2" class="qtr"></textarea></td>
-          <td><textarea [(ngModel)]="row.q3" class="qtr"></textarea></td>
-          <td><textarea [(ngModel)]="row.q4" class="qtr"></textarea></td>
-          <td><textarea [(ngModel)]="row.budget" class="qtr"></textarea></td>
-          <td><textarea [(ngModel)]="row.hr" class="qtr"></textarea></td>
+<app-top-menu></app-top-menu>
+<div class="main">
 
-          <td class="action-column">
-            <button (click)="handleRow(i)" class="add-btn">Save</button>
-            <button (click)="removeRow(i)" class="delete-btn"><i lucideIcon="trash"></i></button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  
-    <button class="add-btn" (click)="addRow()" class="new-row">Add Row</button>
-  </div>
-  
+  <app-side-menu></app-side-menu>
+
+  <div class="container">
+      <h1>Directorate Performance Management</h1>
+      <h2>KEY RESULT AREA 1: Policy development and research</h2>
+      
+      <p class="strategic-objective">
+        <strong>Strategic objective:</strong> To develop at a national level policies, systems, and guidelines 
+        pertaining to employee performance management for employees on salary levels 1 to 12 and to facilitate 
+        and ensure implementation in national and provincial departments in the Public Service through research, 
+        interventions, assistance and advice, and monitoring and evaluation.
+      </p>
+    
+      <table>
+        <thead>
+          <tr>
+            <th rowspan="2">Measurable Objective</th>
+            <th rowspan="2">Outputs</th>
+            <th rowspan="2">Indicator</th>
+            <th colspan="4">Activities per Quarter</th>
+            <th colspan="2">Resource Requirements</th>
+          </tr>
+          <tr>
+            <th>Qtr 1</th>
+            <th>Qtr 2</th>
+            <th>Qtr 3</th>
+            <th>Qtr 4</th>
+            <th>Budget</th>
+            <th>HR Resources</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of rows; let i = index">
+            <td><textarea [(ngModel)]="row.objective" class="non-qtr"></textarea></td>
+            <td><textarea [(ngModel)]="row.outputs" class="non-qtr"></textarea></td>
+            <td><textarea [(ngModel)]="row.indicators" class="non-qtr"></textarea></td>
+            <td><textarea [(ngModel)]="row.q1" class="qtr"></textarea></td>
+            <td><textarea [(ngModel)]="row.q2" class="qtr"></textarea></td>
+            <td><textarea [(ngModel)]="row.q3" class="qtr"></textarea></td>
+            <td><textarea [(ngModel)]="row.q4" class="qtr"></textarea></td>
+            <td><textarea [(ngModel)]="row.budget" class="qtr"></textarea></td>
+            <td><textarea [(ngModel)]="row.hr" class="qtr"></textarea></td>
+
+            <td class="action-column">
+              <button (click)="handleRow(i)" class="add-btn">Save</button>
+              <button (click)="removeRow(i)" class="delete-btn">Remove</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <button class="add-btn" (click)="addRow()" class="new-row">Add Row</button>
+    </div>
+  </div>   

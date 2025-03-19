@@ -1,48 +1,46 @@
 <div class="container">
     <h1>Employee Performance Management</h1>
     
-    <button (click)="addRow()">Add Row</button>
-  
     <table>
       <thead>
         <tr>
-          <th rowspan="2">KEY ACTIVITIES</th>
+          <th rowspan="2"></th>
           <th colspan="5">PERFORMANCE STANDARDS</th>
+          <th colspan="2"></th>
+        </tr>
+        <tr>
+          <th></th>
+          <th colspan="4">Time (completed by)</th>
           <th colspan="2">RESOURCE REQUIREMENTS</th>
         </tr>
         <tr>
+          <th>Key Activity</th>
           <th>Indicators</th>
-          <th colspan="4">Time (completed by)</th>
-          <th>Human resources</th>
-          <th>Financial resources</th>
-        </tr>
-        <tr>
-          <th></th>
-          <th></th>
           <th>Q1</th>
           <th>Q2</th>
           <th>Q3</th>
           <th>Q4</th>
-          <th></th>
-          <th></th>
+          <th>Human resources</th>
+          <th>Financial resources</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let row of rows; let i = index">
-          <td><input [(ngModel)]="row.keyActivity" type="text"></td>
-          <td><input [(ngModel)]="row.indicators" type="text"></td>
-          <td><input [(ngModel)]="row.q1" type="text"></td>
-          <td><input [(ngModel)]="row.q2" type="text"></td>
-          <td><input [(ngModel)]="row.q3" type="text"></td>
-          <td><input [(ngModel)]="row.q4" type="text"></td>
-          <td><input [(ngModel)]="row.humanResources" type="text"></td>
-          <td><input [(ngModel)]="row.financialResources" type="text"></td>
+          <td><textarea [(ngModel)]="row.key_activity" ></textarea></td>
+          <td><textarea [(ngModel)]="row.indicators" ></textarea></td>
+          <td><textarea [(ngModel)]="row.q1" ></textarea></td>
+          <td><textarea [(ngModel)]="row.q2" ></textarea></td>
+          <td><textarea [(ngModel)]="row.q3" ></textarea></td>
+          <td><textarea [(ngModel)]="row.q4" ></textarea></td>
+          <td><textarea [(ngModel)]="row.hr" ></textarea></td>
+          <td><textarea [(ngModel)]="row.fr" ></textarea></td>
           <td class="action-column">
-            <button (click)="saveRow(i)">Save</button>
-            <button (click)="removeRow(i)" class="delete-btn">Remove</button>
+            <button (click)="handleRow(i)">Save</button>
+            <button (click)="remove(i)" class="delete-btn">Remove</button>
           </td>
         </tr>
       </tbody>
     </table>
+    <button (click)="addRow()">Add Row</button>
   </div>
   

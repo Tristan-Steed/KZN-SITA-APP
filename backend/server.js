@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-
+// CREATING TABLES CODE START-------------------------------------------
 db.run(`CREATE TABLE IF NOT EXISTS First_EMPs(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
         key_activity TEXT NOT NULL,
@@ -43,8 +43,9 @@ db.run(`CREATE TABLE IF NOT EXISTS First_DPMs(
         console.log('Users table is ready');
     }
 });
+// CREATING TABLES CODE ENDS-------------------------------------------
 
-//GETS-----------------------------------------------
+//GETS METHODS START-----------------------------------------------
 
 app.get('/users', (req, res) => {
     db.all('SELECT * FROM users', [], (err, rows) =>{
@@ -73,8 +74,9 @@ app.get('/First_DPMs', (req, res) => {
         res.json(rows)
     });
 });
-//-----------------------------------------------------
-//POST--------------------------
+//GETS METHODS ENDS-----------------------------------------------
+
+//POST METHODS START---------------------------------------------
 app.post('/First_DPMs', (req, res) => {
     const { objective, outputs, indicators, q1, q2, q3, q4, budget, hr } = req.body;
 
@@ -98,7 +100,32 @@ app.post('/First_DPMs', (req, res) => {
         });
     });
 });
-//PUT------------------------------------------------------
+
+app.post('/First_EMPs', (req, res) =>{
+    const {key_activity, indicators, q1, q2, q3, q4,hr, fr } = req.body;
+
+    if(!key_activity || !indicators || !hr || !fr){
+        return res.status(400).json({error: "All required fields must be filled except Qs"});
+    }
+
+    const sql = `INSERT INTO First_EMPs (key_activity, indicators, q1, q2, q3, q4,hr, fr) 
+                VALUES (?,?,?,?,?,?,?,?)`;
+    const params = [key_activity, indicators, q1 || null, q2 || null, q3 || null, q4 || null,hr, fr]
+
+    db.run(sql, params, function(err){
+        if(err){
+            return res.status(500).json({error: err.message});
+        }
+         res.status(201).json({
+            message: "Record added successfully",
+            id: this.lastID
+         });
+    });
+});
+
+//POST METHODS ENDS---------------------------------------------
+
+//PUT METHODS START---------------------------------------------
 app.put('/First_DPMs/:id', (req, res) => {
     const { id } = req.params;
     const { objective, outputs, indicators, q1, q2, q3, q4, budget, hr } = req.body;
@@ -121,7 +148,9 @@ app.put('/First_DPMs/:id', (req, res) => {
         res.json({ message: "Record updated successfully", changes: this.changes });
     });
 });
-//DELETE-------------------------------------
+//PUT METHODS ENDS---------------------------------------------
+
+//DELETE METHODS START-----------------------------------------
 app.delete('/First_DPMs/:id', (req, res) => {
     const { id } = req.params;
 
@@ -144,7 +173,7 @@ app.delete('/First_DPMs/:id', (req, res) => {
     });
 });
 
-
+//DELETE METHODS ENDS-----------------------------------------
 
 
 
