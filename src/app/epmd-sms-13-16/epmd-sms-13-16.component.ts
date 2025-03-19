@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import {MatDialog}  from '@angular/material/dialog'
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 
 interface RowData {
   id: number;
@@ -26,7 +28,7 @@ interface RowData {
 
 export class EpmdSmsLevel1316Component implements OnInit{
 
-  constructor (private http: HttpClient) {}
+  constructor (private http: HttpClient, private dialog: MatDialog) {}
 
   
   rows: RowData[]= []
@@ -50,14 +52,25 @@ export class EpmdSmsLevel1316Component implements OnInit{
   addRow() {
     this.rows.push({id: 0, objective: '', outputs: '', indicators: '', q1: '', q2: '', q3: '', q4: '', budget: '', hr: '' });
   }
-  handleRow(index: number){
-    const rowData = this.rows[index];
 
-    if(rowData.id){
-      this.updateRow(index);
-    }else{
-      this.saveRow(index);
-    }
+
+  handleRow(index: number) {
+      const rowData = this.rows[index];
+  
+      const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+          
+          data: { message: 'Are you sure you want to proceed?' }
+      });
+  
+      dialogRef.afterClosed().subscribe(result => {
+          if (result) {
+              if (rowData.id) {
+                  this.updateRow(index);
+              } else {
+                  this.saveRow(index);
+              }
+          }
+      });
   }
   saveRow(index: number) {
     const rowData = { ...this.rows[index] }; // Copy the data to avoid modifying the original object
@@ -122,29 +135,34 @@ export class EpmdSmsLevel1316Component implements OnInit{
 
 
   removeRow(index: number) {
-  const rowData = this.rows[index];
-
-  if (!rowData.id) {
+    const rowData = this.rows[index];
+  
+    if (!rowData.id) {
       alert("Cannot delete row without an ID.");
       return;
+    }
+  
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      data: { message: "Are you sure you want to delete this record?" }
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        // If user confirmed deletion
+        this.http.delete(`http://localhost:3000/First_DPMs/${rowData.id}`).subscribe({
+          next: (response) => {
+            console.log('Row deleted:', response);
+            alert('Row deleted successfully!');
+            this.rows.splice(index, 1); // Remove row from UI after successful deletion
+          },
+          error: (error) => {
+            console.error('Error deleting row:', error);
+            alert('Failed to delete row. Please try again.');
+          },
+          complete: () => console.log('Delete request completed!')
+        });
+      }
+    });
   }
-
-  if (!confirm(`Are you sure you want to delete this record?`)) {
-      return; // Exit if the user cancels the action
-  }
-
-  this.http.delete(`http://localhost:3000/First_DPMs/${rowData.id}`).subscribe({
-      next: (response) => {
-          console.log('Row deleted:', response);
-          alert('Row deleted successfully!');
-          this.rows.splice(index, 1); // Remove the row from the UI after successful deletion
-      },
-      error: (error) => {
-          console.error('Error deleting row:', error);
-          alert('Failed to delete row. Please try again.');
-      },
-      complete: () => console.log('Delete request completed!')
-  });
-  }
-
+  
 }

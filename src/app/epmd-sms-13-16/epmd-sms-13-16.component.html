@@ -1,6 +1,6 @@
 <div class="container">
-    <h2>Directorate Performance Management</h2>
-    <h3>KEY RESULT AREA 1: Policy development and research</h3>
+    <h1>Directorate Performance Management</h1>
+    <h2>KEY RESULT AREA 1: Policy development and research</h2>
     
     <p class="strategic-objective">
       <strong>Strategic objective:</strong> To develop at a national level policies, systems, and guidelines 
@@ -29,23 +29,24 @@
       </thead>
       <tbody>
         <tr *ngFor="let row of rows; let i = index">
-          <td><input [(ngModel)]="row.objective" type="text"></td>
-          <td><input [(ngModel)]="row.outputs" type="text"></td>
-          <td><input [(ngModel)]="row.indicators" type="text"></td>
-          <td><input [(ngModel)]="row.q1" type="text"></td>
-          <td><input [(ngModel)]="row.q2" type="text"></td>
-          <td><input [(ngModel)]="row.q3" type="text"></td>
-          <td><input [(ngModel)]="row.q4" type="text"></td>
-          <td><input [(ngModel)]="row.budget" type="text"></td>
-          <td><input [(ngModel)]="row.hr" type="text"></td>
+          <td><textarea [(ngModel)]="row.objective" class="non-qtr"></textarea></td>
+          <td><textarea [(ngModel)]="row.outputs" class="non-qtr"></textarea></td>
+          <td><textarea [(ngModel)]="row.indicators" class="non-qtr"></textarea></td>
+          <td><textarea [(ngModel)]="row.q1" class="qtr"></textarea></td>
+          <td><textarea [(ngModel)]="row.q2" class="qtr"></textarea></td>
+          <td><textarea [(ngModel)]="row.q3" class="qtr"></textarea></td>
+          <td><textarea [(ngModel)]="row.q4" class="qtr"></textarea></td>
+          <td><textarea [(ngModel)]="row.budget" class="qtr"></textarea></td>
+          <td><textarea [(ngModel)]="row.hr" class="qtr"></textarea></td>
+
           <td class="action-column">
             <button (click)="handleRow(i)" class="add-btn">Save</button>
-            <button (click)="removeRow(i)" class="delete-btn">Remove</button>
+            <button (click)="removeRow(i)" class="delete-btn"><i lucideIcon="trash"></i></button>
           </td>
         </tr>
       </tbody>
     </table>
   
-    <button class="add-btn" (click)="addRow()">Add Row</button>
+    <button class="add-btn" (click)="addRow()" class="new-row">Add Row</button>
   </div>
   
