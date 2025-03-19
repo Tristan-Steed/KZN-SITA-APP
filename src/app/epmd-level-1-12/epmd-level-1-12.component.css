@@ -1,5 +1,10 @@
+.main{
+  display: flex;
+}
+
 .container {
     width: 80%;
+    height: 80vh;
     margin: auto;
     padding: 20px;
     border: 1px solid #ddd;
