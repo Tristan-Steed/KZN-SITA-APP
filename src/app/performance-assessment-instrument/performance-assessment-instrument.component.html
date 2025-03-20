@@ -29,7 +29,7 @@
       <input type="text" [(ngModel)]="employee.name"  />
     </div>
   
-     <!-- Development Plan -->
+     <!-- Race Information -->
       <div class="section">
         <!-- <h3>Development Plan</h3> -->
         <form>
@@ -59,39 +59,11 @@
           <label for="checkbox7">(Specify, if applicable)</label><br>
           <input type="checkbox" id="checkbox7" name="checkbox7" value="Disability">
         </div>
-        </form>
-        <!-- <table>
-          <thead>
-            <tr>
-              <th>Area for Development</th>
-              <th>Generic Training</th>
-              <th>Work Related Training</th>
-              <th>Objective</th>
-              <th>Intervention Type</th>
-              <th>Target Quarter</th>
-              <th class="action-column">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let goal of developmentGoals; let i = index">
-              <td><input type="text" [(ngModel)]="goal.area" placeholder="e.g. Computer Skills" /></td>
-              <td><input type="text" [(ngModel)]="goal.training" placeholder="e.g. Research for ..." /></td>
-              <td><input type="text" [(ngModel)]="goal.workRelatedTraining" placeholder="e.g. Research for te" /></td>
-              <td><input type="text" [(ngModel)]="goal.objective" placeholder="e.g. Short course" /></td>
-              <td><input type="text" [(ngModel)]="goal.interventionType" placeholder="e.g. Short course" /></td>
-              <td><input type="text" [(ngModel)]="goal.quarter" placeholder="e.g. Q3" /></td>
-              <td>
-                <button id="greenBtn" (click)="SaveGoal(i)" style="display: none;">Save</button>
-                <button (click)="removeGoal(i)">Remove</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <button (click)="addDevelopmentGoal()">Add Development Goal</button> -->
+        </form>       
       </div>
 
   
-    <!-- Conferences Attended -->
+    <!-- Occupation Type -->
     <div class="section">
       <p class="tickbox">(Tick the appropriate box)</p>
       <div class="Checkbox">
@@ -103,30 +75,10 @@
           <input type="checkbox" id="checkbox10" name="checkbox10" value="Permanent">
           <label for="checkbox11">Contract</label><br>
           <input type="checkbox" id="checkbox11" name="checkbox11" value="Contract">
-        </div>
-      <!-- <table>
-        <thead>
-          <tr>
-            <th>Conference Name</th>
-            <th>Type of Conference</th>
-            <th class="action-column">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let conference of conferences; let i = index">
-            <td><input type="text" [(ngModel)]="conference.name" placeholder="e.g. Virtual Learn Conference" /></td>
-            <td><input type="text" [(ngModel)]="conference.type" placeholder="e.g. Legal updates" /></td>
-            <td>
-              <button id="greenBtn" (click)="SaveConference(i)" style="display: none;">Save</button>
-              <button (click)="removeConference(i)">Remove</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <button (click)="addConference()">Add Conference</button> -->
+        </div>    
     </div>
      
-    <!-- Impact Assessment -->
+    <!-- Employee Review -->
     <div class="section">
       <h3>PART 1 - COMMENTS BY RATED EMPLOYEE</h3>
       <p>(To be completed by employee prior to assessment. If the space provided is insufficient, the comments can be included in an attachment)</p>
@@ -135,9 +87,6 @@
   
       <label>2. During the past year I was less successful in the following areas for the reasons stated:</label>
       <textarea [(ngModel)]="employeeComments"></textarea>
-  
-      <!-- <label>Supervisor Comments:</label>
-      <textarea [(ngModel)]="supervisorComments"></textarea> -->
     </div>
   
     <!-- Buttons -->

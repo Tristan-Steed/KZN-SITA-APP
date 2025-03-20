@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PerformanceAssessmentPart2 } from './performance-assessment-part3_4.component';
+import { PerformanceAssessmentPart3_4 } from './performance-assessment-part3_4.component';
 
 describe('PerformanceAssessmentPart3_4', () => {
-  let component: PerformanceAssessmentPart2;
-  let fixture: ComponentFixture<PerformanceAssessmentPart2>;
+  let component: PerformanceAssessmentPart3_4;
+  let fixture: ComponentFixture<PerformanceAssessmentPart3_4>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PerformanceAssessmentPart2]
+      imports: [PerformanceAssessmentPart3_4]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PerformanceAssessmentPart2);
+    fixture = TestBed.createComponent(PerformanceAssessmentPart3_4);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

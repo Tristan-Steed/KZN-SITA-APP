@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PersonalDevelopmentPlanComponent } from './performance-assessment-instrument.component';
+import { PerformanceAssessmentInstrument } from './performance-assessment-instrument.component';
 
-describe('PersonalDevelopmentPlanComponent', () => {
-  let component: PersonalDevelopmentPlanComponent;
-  let fixture: ComponentFixture<PersonalDevelopmentPlanComponent>;
+describe('PerformanceAssessmentIntrument', () => {
+  let component: PerformanceAssessmentInstrument;
+  let fixture: ComponentFixture<PerformanceAssessmentInstrument>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PersonalDevelopmentPlanComponent]
+      imports: [PerformanceAssessmentInstrument]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PersonalDevelopmentPlanComponent);
+    fixture = TestBed.createComponent(PerformanceAssessmentInstrument);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

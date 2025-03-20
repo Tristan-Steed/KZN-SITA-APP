@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './performance-assessment-part3_4.component.html',
   styleUrls: ['./performance-assessment-part3_4.component.css']
 })
-export class PerformanceAssessmentPart2 {
+export class PerformanceAssessmentPart3_4 {
   mandate = {
     constitutional: '',
     legislative: '',
