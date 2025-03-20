@@ -1,6 +1,6 @@
 .container {
     width: 70%;
-    height: 95vh;
+    height: fit-content;
     margin: auto;
     padding: 20px;
     border: 1px solid #ddd;

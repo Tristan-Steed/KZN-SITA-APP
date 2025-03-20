@@ -2,9 +2,9 @@
     <h1>Part 2 - Performance Assessment</h1>
     <hr />
   
-    <!-- Part A: Our Mandate -->
+    <!-- Ratings Table for KRAs & GAFs -->
     <div class="section">
-      <h2>Standard Rating SChedule for KRAs and GAFs</h2>
+      <h2>Standard Rating Schedule for KRAs and GAFs</h2>
       <table>
         <thead>
           <tr>
@@ -55,13 +55,11 @@
               The rewiew/assessment indicates that the jobholder has achieved less than fully effective results against all of the 
             performance criteria and indicators as specified in the Performance Agreement and Workplan.</td>
           </tr>
-  
         </tbody>
-      </table>
-      
+      </table>   
     </div>
   
-    <!-- Part B: Our Strategic Focus -->
+    <!-- Rating of KRA -->
     <div class="section">
       <h2>Rating of KRAs by Supervisor and Employee:</h2>
       <table>
@@ -136,6 +134,7 @@
       </table>
     </div>
 
+    <!-- Rating of GAF -->
     <div class="section">
       <h2>Rating of GAFs by Supervisor and Employee:</h2>
       <table>
@@ -210,6 +209,7 @@
       </table>
     </div>
 
+    <!-- Final Score  -->
     <div class="section">
       <h2>FINAL SCORE</h2>
       <table>
@@ -232,37 +232,10 @@
       </table>
     </div>
   
-    <!-- Part C: Measuring Our Performance -->
-    <!-- <div class="section">
-      <h2>Part C: Measuring Our Performance</h2>
-  
-      <table>
-        <thead>
-          <tr>
-            <th>OUTCOME</th>
-            <th>OUTCOME INDICATOR</th>
-            <th>BASELINE</th>
-            <th>FIVE YEAR TARGET</th>
-            <th class="action-column">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let outcome of performance; let i = index">
-            <td><input type="text" [(ngModel)]="outcome.outcome" /></td>
-            <td><input type="text" [(ngModel)]="outcome.indicator" /></td>
-            <td><input type="text" [(ngModel)]="outcome.baseline" /></td>
-            <td><input type="text" [(ngModel)]="outcome.target" /></td>
-            <td class="action-column">
-              <button (click)="removeOutcome(i)">Remove</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <button id="greenBtn" (click)="addOutcome()">ADD OUTCOME</button>
-    </div> -->
-  
     <!-- Buttons -->
     <button>Save</button>
-    <button id="greenBtn">Save & Submit for Approval</button>
+    <a href="http://localhost:4200/PerformanceAssessmentInstrumentPart3_4">
+    <button>Next Page</button>
+    </a>
   </div>
   
