@@ -1,0 +1,99 @@
+<div class="container">
+    <h1>Performance Assessment Instrument</h1>
+    <hr>
+  
+    <!-- Employee Information -->
+    <div class="section">
+      <h2>Annual Performance Assessment Instrument</h2>
+      <p><i>The manager must forward thr completed form to the Section: People Management for filing immediately after completion.</i></p>
+      <h3 class="confidential"><i>CONFIDENTIAL</i></h3>
+      <label>Period under review</label>
+      <input type="text" [(ngModel)]="employee.department" />
+  
+      <label>Surname and initials</label>
+      <input type="text" [(ngModel)]="employee.jobTitle"/>
+  
+      <label>Job title</label>
+      <input type="text" [(ngModel)]="employee.name"  />
+
+      <label>Remuneration level</label>
+      <input type="text" [(ngModel)]="employee.name"  />
+
+      <label>Persal no.</label>
+      <input type="text" [(ngModel)]="employee.name"  />
+
+      <label>Component</label>
+      <input type="text" [(ngModel)]="employee.name"  />
+
+      <label>Date of appointment to current remuneration level</label>
+      <input type="text" [(ngModel)]="employee.name"  />
+    </div>
+  
+     <!-- Race Information -->
+      <div class="section">
+        <!-- <h3>Development Plan</h3> -->
+        <form>
+          <label>Race</label>
+          <div class="Checkbox Race">
+        
+          <label for="checkbox1">African</label><br>
+          <input type="checkbox" id="checkbox1" name="checkbox1" value="African">
+          <label for="checkbox2">Coloured</label><br>
+          <input type="checkbox" id="checkbox2" name="checkbox2" value="Coloured">
+          <label for="checkbox3">Indian</label><br>
+          <input type="checkbox" id="checkbox3" name="checkbox3" value="Indian">
+          <label for="checkbox4">White</label><br>
+          <input type="checkbox" id="checkbox4" name="checkbox4" value="White">
+        </div>
+
+        <div class="Checkbox Gender">
+          <label>Gender</label>
+          <label for="checkbox5">Male</label><br>
+          <input type="checkbox" id="checkbox5" name="checkbox5" value="Male">
+          <label for="checkbox6">Female</label><br>
+          <input type="checkbox" id="checkbox6" name="checkbox6" value="Female">
+        </div>
+
+        <div class="Checkbox Disable">
+          <label>Disability</label>
+          <label for="checkbox7">(Specify, if applicable)</label><br>
+          <input type="checkbox" id="checkbox7" name="checkbox7" value="Disability">
+        </div>
+        </form>       
+      </div>
+
+  
+    <!-- Occupation Type -->
+    <div class="section">
+      <p class="tickbox">(Tick the appropriate box)</p>
+      <div class="Checkbox">
+      <label for="checkbox8">Probation</label><br>
+          <input type="checkbox" id="checkbox8" name="checkbox8" value="Probation">
+          <label for="checkbox9">Extended probation</label><br>
+          <input type="checkbox" id="checkbox9" name="checkbox9" value="ExProbation">
+          <label for="checkbox10">Permanent</label><br>
+          <input type="checkbox" id="checkbox10" name="checkbox10" value="Permanent">
+          <label for="checkbox11">Contract</label><br>
+          <input type="checkbox" id="checkbox11" name="checkbox11" value="Contract">
+        </div>    
+    </div>
+     
+    <!-- Employee Review -->
+    <div class="section">
+      <h3>PART 1 - COMMENTS BY RATED EMPLOYEE</h3>
+      <p>(To be completed by employee prior to assessment. If the space provided is insufficient, the comments can be included in an attachment)</p>
+      <label>1. During the past year my major accomplishments as they related to my performance agreement were:</label>
+      <textarea [(ngModel)]="impactAssessment"></textarea>
+  
+      <label>2. During the past year I was less successful in the following areas for the reasons stated:</label>
+      <textarea [(ngModel)]="employeeComments"></textarea>
+    </div>
+  
+    <!-- Buttons -->
+     <div class="section">
+      <button (click)="savePlan()">Save Plan</button>
+      <button id="greenBtn" (click)="submitForApproval()">Submit for Approval</button>
+     </div>
+    
+  </div>
+  
